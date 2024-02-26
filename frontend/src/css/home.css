@@ -1,0 +1,30 @@
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.category-square {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .category-square:hover {
+    background-color: rgba(0, 0, 0, 0.3); 
+  }
+  
+  .category-name {
+    color: rgb(0, 0, 0);
+    font-size: 1.2rem;
+  }
+  
+
+

@@ -1,0 +1,10 @@
+# Node.js / Express / MongoDB server
+/backend/node_modules
+/backend/.env
+
+# React Vite client
+/frontend/node_modules
+/frontend/.env
+
+# Other general ignores
+.DS_Store

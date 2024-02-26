@@ -1,0 +1,57 @@
+.episode-card {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .episode-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .episode-details {
+    flex-grow: 1;
+    padding: 16px;
+  }
+  
+  .episode-details h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .episode-details p {
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+  
+  .episode-info {
+    margin-bottom: 10px;
+  }
+  
+  .episode-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .episode-controls audio {
+    margin-right: 10px;
+  }
+  
+  .play-button {
+    background-color: #1db954;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .play-button:hover {
+    background-color: #1ed760;
+  }
+  
