@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
 
-const Search = ({ onSearch }) => {
-const [query, setQuery] = useState('');
-
-const handleSearch = () => {
-    onSearch(query);
+export default function search(){
+    return (
+        <div>
+        <h1>search</h1>
+        <button>Search</button>
+        </div>
+    )
 };
 
-return (
-    <div>
-    <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} />
-    <button onClick={handleSearch}>Search</button>
-    </div>
-);
-};
 
-export default Search;
+
+
+
+

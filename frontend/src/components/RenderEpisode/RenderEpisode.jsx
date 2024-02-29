@@ -20,30 +20,24 @@ const RenderEpisode = ({ episode }) => {
         className="episode-cover-image"
       />
       <div className="episode-details">
-        <h3>{episode.title}</h3>
+        <h3 className="EpiTitle">{episode.title}</h3>
         <p>{episode.description}</p>
         <div className="episode-info">
-          <p>Length: {episode.length}</p>
-          <p>Release Date: {episode.releaseDate}</p>
-          <p>Start Date: {episode.scheduling?.startDate}</p>
+          {/* <p>Length: {episode.length}</p> */}
+          {/* <p>Release Date: {episode.releaseDate}</p> */}
+          {/* <p>Start Date: {episode.scheduling?.startDate}</p>
           <p>End Date: {episode.scheduling?.endDate}</p>
           <p>Timezone: {episode.scheduling?.timezone}</p>
-          <p>Date of Arrival: {episode.dateOfArrival}</p>
+          <p>Date of Arrival: {episode.dateOfArrival}</p> */}
         </div>
+        <br />
+        <br />
         <div className="episode-controls">
           <audio ref={audioRef} controls src={episode.audioFile}></audio>
-          <button
-            className="play-button"
-            onClick={handlePlayEpisode}
-          >
+          <br />
+          <button className="play-button" onClick={handlePlayEpisode}>
             Play
           </button>
-          {/* <button
-            className="go-back-button"
-            onClick={goBack}
-          >
-            Go Back
-          </button> */}
         </div>
       </div>
     </div>

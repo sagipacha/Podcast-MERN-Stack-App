@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { baseUrl } from "../../utils/baseUrl";
 import RenderEpisode from "../components/RenderEpisode/RenderEpisode";
+import Navbar from "../components/NavBar/NavBar";
 
 const Episodes = () => {
   const [episodes, setEpisodes] = useState([]);
@@ -31,14 +32,15 @@ const Episodes = () => {
     };
 
     fetchEpisodes();
-  }, [ podcastId]);
+  }, [podcastId]);
 
   if (loading) return <p>Loading episodes...</p>;
   if (episodes.length === 0) return <p>No episodes found.</p>;
 
   return (
     <div>
-      <h2>Episodes</h2>
+      <Navbar />
+      {/* <h2>Episodes</h2> */}
       {episodes.map((episode) => (
         <RenderEpisode key={episode.id} episode={episode} />
       ))}

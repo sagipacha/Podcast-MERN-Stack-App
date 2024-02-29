@@ -1,7 +1,11 @@
+const mongoose = require("mongoose");
 const Episode = require("../models/episods.model");
 const {
   uploadToCloudinary,
 } = require("../upload-media-cloud/uploadMediaCloud");
+const { ObjectId } = require("mongodb");
+const { Types } = mongoose;
+
 // Create a new episode
 // const createEpisode = async (req, res) => {
 //     const { body } = req;
@@ -25,13 +29,24 @@ const createEpisode = async (req, res) => {
     body.audioFile = data.url;
     body.audioPublicId = data.public_id;
 
-    body.podcastId = podcast.podcastId;
+    // Convert podcastId to ObjectId
+    body.podcastId = new ObjectId(String(body.podcastId));
 
     const episode = new Episode(body);
     await episode.save();
     res.status(201).send(episode);
   } catch (error) {
+    console.error(error);
     res.status(400).json({ error: error.message });
+  }
+};
+
+const getAllEpisodes = async (req, res) => {
+  try {
+    const episodes = await Episode.find();
+    res.json(episodes);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -105,12 +120,9 @@ const getEpisodes = async (req, res) => {
       podcastId: podcastId,
     });
     if (!episodes || episodes.length === 0) {
-      return res
-        .status(404)
-        .json({
-          message:
-            "No episodes found for the specified category and podcast ID.",
-        });
+      return res.status(404).json({
+        message: "No episodes found for the specified category and podcast ID.",
+      });
     }
     res.send(episodes);
   } catch (error) {
@@ -126,4 +138,5 @@ module.exports = {
   updateEpisode,
   deleteEpisode,
   getEpisodes,
+  getAllEpisodes,
 };

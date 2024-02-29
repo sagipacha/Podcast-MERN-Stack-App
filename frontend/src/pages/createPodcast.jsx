@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import CreatePodcastForm from "../components/PodcastForm/CreatePodcastForm";
 import { baseUrl } from "../../utils/baseUrl";
-// import { useHistory } from "react-router-dom";
 
 export default function CreatePodcast() {
   const [formData, setFormData] = useState({
@@ -14,7 +13,6 @@ export default function CreatePodcast() {
     tags: [],
     coverImage: "",
     dateOfArrival: "",
-    podcastId: "",
   });
 
   const handleChange = (e) => {
@@ -23,7 +21,6 @@ export default function CreatePodcast() {
   };
 
   const [createdPodcastId, setCreatedPodcastId] = useState(null);
-  // const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,16 +47,12 @@ export default function CreatePodcast() {
         tags: [],
         coverImage: "",
         dateOfArrival: "",
-        podcastId: response.data._id,
       });
     } catch (error) {
       console.error("Error creating podcast:", error);
     }
   };
 
-  // const handleCreateEpisode = () => {
-  //   history.push(`/podcasts/${formData.podcastId}/create-episode`);
-  // };
 
   return (
     <div>

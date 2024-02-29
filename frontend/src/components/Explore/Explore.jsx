@@ -1,23 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "../../css/Explore.css";
 
 const Explore = () => {
-return (
-    <div>
+  return (
+    <div className="container">
+      <div className="center">
         <img
-        src="https://static.vecteezy.com/system/resources/previews/018/921/386/non_2x/black-gaming-headphone-isolated-for-music-and-podcast-design-element-png.png"
-        alt="Explore"
-        style={{ width: '200px', height: '200px' }}
+        //   src={headphonesImage} 
+          alt="Sleek Modern"
+          className="image"
         />
         <h2>
-            Welcome to <br />
-            SonicSphere
+          Welcome to <br />
+          AudioSphere
         </h2>
         <Link to="/Authentication">
-            <button>Explore</button>
+          <button className="explore-button">Explore</button>
         </Link>
+      </div>
     </div>
-);
-}
+  );
+};
 
 export default Explore;

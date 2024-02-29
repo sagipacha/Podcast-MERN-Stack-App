@@ -1,0 +1,123 @@
+/* Profile Creator Page */
+.profile-creator-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .profile-section {
+    margin-bottom: 40px;
+  }
+  
+  .profile-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Personal Details */
+  .profile-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    border: 3px solid #f7931e;
+  }
+  
+  .profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  .profile-info p {
+    margin-bottom: 10px;
+  }
+  
+  /* Podcast Details */
+  .profile-podcast p {
+    margin-bottom: 10px;
+  }
+  
+  /* Social Media Links */
+  .profile-social-links a {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .profile-social-links a:hover {
+    color: #f7931e;
+  }
+  
+  /* Bio */
+  .profile-bio {
+    margin-bottom: 20px;
+  }
+  
+  /* Podcast Analytics */
+  /* .profile-analytics {
+  } */
+  
+  /* Quick Actions */
+  .profile-actions {
+    display: flex;
+  }
+  
+  .profile-action {
+    display: flex;
+    align-items: center;
+    background-color: #a06929;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .profile-action i {
+    margin-right: 10px;
+  }
+  
+  .profile-action:hover {
+    background-color: #e8780d;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 400px) {
+    .profile-creator-container {
+      padding: 10px;
+    }
+  
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+    }
+  
+    .profile-section-title {
+      font-size: 1.3rem;
+    }
+  
+    .profile-info p,
+    .profile-podcast p {
+      font-size: 0.9rem;
+    }
+  
+    .profile-action {
+      padding: 8px 15px;
+    }
+  }
+  

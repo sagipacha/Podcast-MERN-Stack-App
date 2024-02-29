@@ -3,6 +3,7 @@ import axios from "axios";
 import RenderPodcast from "../components/RenderPodcast/RenderPodcast";
 import { baseUrl } from "../../utils/baseUrl";
 import { useParams } from "react-router-dom";
+import NavBar from "../components/NavBar/NavBar";
 
 const Podcast = () => {
   const [podcasts, setPodcasts] = useState([]);
@@ -34,7 +35,8 @@ const Podcast = () => {
 
   return (
     <div>
-      <h1>Podcasts</h1>
+      <NavBar />
+      <h1>{category} Podcasts</h1>
       <RenderPodcast podcasts={podcasts} />
     </div>
   );

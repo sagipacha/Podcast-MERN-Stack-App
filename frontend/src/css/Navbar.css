@@ -1,0 +1,109 @@
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+  }
+  
+  .navbar-icon {
+    cursor: pointer;
+    font-size: 30px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    display: none;
+    color: rgb(0, 0, 0);
+  }
+  
+  .sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: left 0.9s; 
+    padding-top: 100px;
+  }
+  
+  .sidebar.closed {
+    display: none;
+  }
+  
+  .sidebar.open {
+    display: block;
+    left: 0;
+  }
+  
+  .sidebar a {
+    padding: 20px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(7, 4, 4);
+    /* display: block; */
+    transition: color 0.9s; 
+  }
+  
+  .sidebar a:hover {
+    color: #a19f9f;
+  }
+
+  .icon-wrapper {
+    display: flex;   
+    flex-direction: column;
+    bottom: 150px; /* Adjust as needed */
+    right: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; 
+    padding: 5%;
+   
+  }
+  
+  .logo {
+    width: 150px; 
+    height: 25%; 
+  }
+
+
+  @media screen and (min-width: 400px) {
+    .navbar-icon {
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .navbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background-color: #333;
+      color: white;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+    }
+  
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+    }
+  }
+  
+  

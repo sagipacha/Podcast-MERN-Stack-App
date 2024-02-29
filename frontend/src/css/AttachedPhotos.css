@@ -1,0 +1,43 @@
+.photo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* .front-photo-item{
+  width: 20%;
+  padding: 10%;
+
+} */
+
+.photo-item {
+  margin: 5px;
+}
+
+.photo-item img {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.large {
+  width: 45%;
+}
+
+.medium {
+  width: 30%;
+}
+
+.small {
+  width: 20%;
+}
+
+
+@media screen and (max-width: 400px) {
+  .photo-item {
+    width: 100%;
+  }
+}
+
+  

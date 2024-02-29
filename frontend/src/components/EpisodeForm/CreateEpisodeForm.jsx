@@ -1,6 +1,23 @@
 import React from "react";
 
-const CreateEpisodeForm = ({ formData, handleChange, handleSubmit, handleAudioUpload }) => {
+const CreateEpisodeForm = ({
+  podcasts,
+  formData,
+  handleChange,
+  handleSubmit,
+  handleAudioUpload,
+}) => {
+  // console.log(podcasts);
+
+  const groupedPodcasts = podcasts.reduce((groups, podcast) => {
+    const category = podcast.category;
+    if (!groups[category]) {
+      groups[category] = [];
+    }
+    groups[category].push(podcast);
+    return groups;
+  }, {});
+
   return (
     <form onSubmit={handleSubmit} className="form-container">
       <h2>Create a New Episode</h2>
@@ -55,26 +72,62 @@ const CreateEpisodeForm = ({ formData, handleChange, handleSubmit, handleAudioUp
           className="form-control"
         />
       </div>
+
       {/* <div className="form-group">
-        <label>Start Date:</label>
-        <input
-          type="date"
-          name="startDate"
-          value={formData.scheduling.startDate}
-          onChange={handleChange}
-          className="form-control"
-        />
-      </div>
+    <label>Select Podcast:</label>
+    <table className="podcast-table">
+      <thead>
+        <tr>
+          {Object.keys(groupedPodcasts).map((category) => (
+            <th key={category}>{category}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {Object.values(groupedPodcasts).map((podcastsInCategory, index) => (
+            <td key={index}>
+              <select
+                name="podcastId"
+                value={formData.podcastId}
+                onChange={handleChange}
+                className="form-control"
+              >
+                <option value="">Select a Podcast</option>
+                {podcastsInCategory.map((podcast) => (
+                  <option key={podcast.id} value={podcast.id}>
+                    {podcast.title}
+                  </option>
+                ))}
+              </select>
+            </td>
+          ))}
+        </tr>
+      </tbody>
+    </table>
+  </div> */}
+
       <div className="form-group">
-        <label>End Date:</label>
-        <input
-          type="date"
-          name="endDate"
-          value={formData.scheduling.endDate}
+        <label>Select Podcast:</label>
+        <select
+          name="podcastId"
+          value={formData.podcastId}
           onChange={handleChange}
           className="form-control"
-        />
-      </div> */}
+        >
+          <option value="">Select a Podcast</option>
+          {Object.keys(groupedPodcasts).map((category) => (
+            <optgroup key={category} label={category}>
+              {groupedPodcasts[category].map((podcast) => (
+                <option key={podcast.id} value={podcast._id}>
+                  {podcast.title}
+                </option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+      </div>
+
       <button type="submit" className="btn-primary">
         Create Episode
       </button>
@@ -83,4 +136,3 @@ const CreateEpisodeForm = ({ formData, handleChange, handleSubmit, handleAudioUp
 };
 
 export default CreateEpisodeForm;
-

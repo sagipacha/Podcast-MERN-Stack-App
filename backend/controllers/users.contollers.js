@@ -105,6 +105,7 @@ const login = async (req, res) => {
           id: user._id,
           email: user.email,
           role: user.role,
+          fullName: user.fullName
         });
         console.log(token);
         return res.send({user:{id:user._id,email:user.email,role:user.role,fullName:user.fullName},token});

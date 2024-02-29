@@ -1,57 +1,156 @@
 .episode-card {
+  display: flex;
+  margin-bottom: 35px; 
+  margin-left: 35px;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  overflow:hidden;
+  box-shadow: 5px 2px 4px rgba(0, 0, 0, 0.1);
+  width: 630px; 
+  height: 180px; 
+  margin-top: 7%;
+  padding: 5px;
+}
+
+.episode-card image {
+  width: auto; 
+  object-fit: contain;
+  border-radius: 8px 8px 0 0; 
+}
+
+.EpiTitle {
+  margin-bottom: 15%;
+}
+
+.episode-details {
+  padding: 16px;
+}
+
+.episode-details h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.episode-details p {
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.episode-info {
+  margin-bottom: 10px;
+}
+
+.episode-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.episode-controls audio {
+  margin-right: 5px;
+  width: 100%;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  outline: none;
+}
+
+.play-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #1db954;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.play-button:hover {
+  background-color: #1ed760;
+  transform: translateY(-2px);
+}
+
+.play-button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+
+
+@media screen and (max-width: 400px) {
+  .episode-card {
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: auto;
+    height: auto;
+    padding: 20px;
   }
   
+  h2{
+    text-align: center;
+  }
+
   .episode-card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+    width: 40%; /* Adjusted width to fit container */
+    height: 230px; /* Set height to auto for responsive resizing */
+    border-radius: 8px 8px 0 0; /* Adjust border radius for the top corners */
+  object-fit: cover;
   }
-  
+
   .episode-details {
-    flex-grow: 1;
-    padding: 16px;
-  }
-  
-  .episode-details h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-  
-  .episode-details p {
-    margin-bottom: 4px;
-    font-size: 14px;
-  }
-  
-  .episode-info {
+    padding: 10px;
     margin-bottom: 10px;
+    margin-top: -20px;
   }
-  
+
+  .episode-details h3 {
+    font-size: 14px; /* Reduced font size for better readability on smaller screens */
+    margin-bottom: 10%;
+  }
+
+  .episode-details p {
+    font-size: 12px; /* Reduced font size for better readability on smaller screens */
+  }
+
   .episode-controls {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Align items evenly */
   }
   
   .episode-controls audio {
-    margin-right: 10px;
+    margin-right: 5px; /* Reduced margin for better layout on smaller screens */
+    padding: 6px 12px; /* Increased padding for better touch interaction */
+    height: 40px; /* Adjusted height for better alignment */
+    border-radius: 8px; /* Added border radius for a softer appearance */
+    background-color: #f2f2f2; /* Light background color */
+    border: 1px solid #ccc; /* Border for visual separation */
+    outline: none; /* Remove default focus outline */
+    flex-grow: 1; /* Take remaining space */
+    display: block;
   }
   
   .play-button {
-    background-color: #1db954;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 10px 20px; /* Increased padding for better touch interaction */
+    font-size: 16px; /* Adjusted font size for better visibility */
+    color: #fff; /* White text color */
+    background-color: #1db954; /* Green background color */
+    border: none; /* Removed border */
+    border-radius: 8px; /* Added border radius for a softer appearance */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition effects */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle box shadow for depth */
+    height: 50px;
   }
   
   .play-button:hover {
-    background-color: #1ed760;
+    background-color: #1ed760; /* Darker green on hover */
+    transform: translateY(-2px); /* Move button slightly up on hover */
   }
   
+  .play-button:active {
+    transform: translateY(0); /* Reset transform on click */
+    box-shadow: none; /* Remove box shadow on click */
+  }
+}
