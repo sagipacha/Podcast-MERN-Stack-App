@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const UserContext = createContext({});
 
-const API_BASE_URL = "http://localhost:1754/api/v1/users";
+const API_BASE_URL = "https://podcast-mern-stack-app-3.onrender.com/api/v1/users";
 const API_VERIFY_URL = `${API_BASE_URL}/verification`;
 
 export default function UserProvider({ children }) {

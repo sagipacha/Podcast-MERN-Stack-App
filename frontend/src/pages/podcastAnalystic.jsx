@@ -7,7 +7,7 @@ const PodcastAnalytics = () => {
 
   useEffect(() => {
     const fetchAnalytics = async () => {
-      const response = await axios.get("http://localhost:1754/api/v1/PodcastAnalytics/");
+      const response = await axios.get("https://podcast-mern-stack-app-3.onrender.com/api/v1/PodcastAnalytics/");
       setAnalytics(response.data);
       setLoading(false);
     };

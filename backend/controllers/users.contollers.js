@@ -44,7 +44,7 @@ const sendVerificationEmail = async (email, token) => {
       },
     });
 
-    const verificationLink = `http://localhost:1754/verify/${email}/${token}`;
+    const verificationLink = `https://podcast-mern-stack-app-3.onrender.com/verify/${email}/${token}`;
 
     const mailOptions = {
       from: process.env.EMAIL_USERNAME,
@@ -131,7 +131,7 @@ const forgotPassword = async (req, res) => {
     const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
       expiresIn: "720h",
     });
-    const resetLink = `http://localhost:1754/reset-password/${oldUser._id}/${token}`;
+    const resetLink = `https://podcast-mern-stack-app-3.onrender.com/reset-password/${oldUser._id}/${token}`;
 
     var transporter = nodemailer.createTransport({
       service: "gmail",

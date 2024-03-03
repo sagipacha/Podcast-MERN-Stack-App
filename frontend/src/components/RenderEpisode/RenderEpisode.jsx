@@ -18,20 +18,27 @@ const RenderEpisode = ({ episode }) => {
         src={episode.coverImage}
         alt={episode.title}
         className="episode-cover-image"
+        style={{
+          maxWidth: "80%",
+          maxHeight: "90%",
+          objectFit: "cover",
+          borderRadius: "15px",
+          padding: "10px",
+        }}
       />
+
       <div className="episode-details">
         <h3 className="EpiTitle">{episode.title}</h3>
         <p>{episode.description}</p>
-        <div className="episode-info">
+        {/* <div className="episode-info"> */}
           {/* <p>Length: {episode.length}</p> */}
           {/* <p>Release Date: {episode.releaseDate}</p> */}
           {/* <p>Start Date: {episode.scheduling?.startDate}</p>
           <p>End Date: {episode.scheduling?.endDate}</p>
           <p>Timezone: {episode.scheduling?.timezone}</p>
           <p>Date of Arrival: {episode.dateOfArrival}</p> */}
-        </div>
-        <br />
-        <br />
+        {/* </div> */}
+        <br /> <br />
         <div className="episode-controls">
           <audio ref={audioRef} controls src={episode.audioFile}></audio>
           <br />
