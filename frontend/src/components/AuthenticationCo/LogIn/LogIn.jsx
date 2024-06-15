@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faKey } from "@fortawesome/free-solid-svg-icons";
 // import "../../../css/logIn.css";
-import "../../../css/SignUp.css";
+import "../SignUp/SignUp.css";
 import { useNavigate } from "react-router-dom";
 
 export default function LogIn({ handleSubmit, handleChange }) {

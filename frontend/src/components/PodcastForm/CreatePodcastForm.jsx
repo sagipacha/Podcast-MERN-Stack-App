@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/CreatePodcastForm.css";
+import "./CreatePodcastForm";
 
 const CreatePodcastForm = ({ formData, handleChange, handleSubmit }) => {
   const handleTagsChange = (e) => {

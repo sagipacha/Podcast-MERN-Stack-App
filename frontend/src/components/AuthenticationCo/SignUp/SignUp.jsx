@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../css/SignUp.css";
+import "./SignUp.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faUser,
