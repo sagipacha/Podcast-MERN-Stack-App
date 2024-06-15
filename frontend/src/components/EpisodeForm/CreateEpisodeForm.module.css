@@ -1,0 +1,102 @@
+/* Container for both forms */
+.form-container {
+    width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  /* Form titles */
+  .title-signup,
+  .title-login {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Form groups for labels and inputs */
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  /* Labels */
+  .label {
+    font-size: 1rem;
+    color: #555555;
+  }
+  
+  /* Inputs */
+  .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Icon styles */
+  .input-icon {
+    margin-bottom: 10px;
+  }
+  
+  /* Submit button */
+  .btn-primary {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 60%;
+    align-self: center;
+  }
+  
+  /* Terms and conditions checkbox */
+  .terms-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Forgot password link */
+  .link-forgot-password {
+    font-size: 0.9rem;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  /* Responsive design for mobile screens */
+  @media screen and (max-width: 400px) {
+    .form-container {
+      width: 90%;
+      padding: 20px;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  
+    .title-signup,
+    .title-login {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+    }
+  
+    .form-control,
+    .btn-primary {
+      width: 100%;
+    }
+  }
+  

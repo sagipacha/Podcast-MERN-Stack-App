@@ -1,5 +1,4 @@
-// Episodes.js
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { baseUrl } from "../../../utils/baseUrl";
@@ -40,7 +39,6 @@ const Episodes = () => {
   return (
     <div>
       <Navbar />
-      {/* <h2>Episodes</h2> */}
       {episodes.map((episode) => (
         <RenderEpisode key={episode.id} episode={episode} />
       ))}
