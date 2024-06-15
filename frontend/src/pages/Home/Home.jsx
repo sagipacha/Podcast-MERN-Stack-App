@@ -1,26 +1,6 @@
-import React from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
-import "./home.css";
-// import Footer from "../components/Footer/footer";
-// import AttachedPhotos from "../components/AttachedPhotos/AttachedPhotos";
-// import technology2 from "../pictures/technology2.jpg";
-// import science from "../pictures/science.jpg";
-// import business2 from "../pictures/business2.jpg";
-// import Health from "../pictures/Health.jpg";
-// import Education from "../pictures/Education.jpg";
-// import Art_Culture from "../pictures/Art_Culture.jpg";
-// import sports from "../pictures/sports.jpg";
-// import comedy from "../pictures/comedy.jpg";
-// import Travel from "../pictures/Travel.jpg";
-// import Food_Cooking from "../pictures//Food_Cooking.jpg";
-// import History from "../pictures/History.jpg";
-// import Music2 from "../pictures/Music2.jpg";
-// import Literature2 from "../pictures/Literature2.jpg";
-// import Fashion from "../pictures/Fashion.jpg";
-// import Gaming from "../pictures/Gaming.jpg";
-// import Parenting from "../pictures/Parenting.jpg";
-// import Self_Improvement from "../pictures/Self_Improvement.jpg";
+import styles from "./Home.module.css";
 
 const categories = [
   {
@@ -102,8 +82,7 @@ const categories = [
   {
     name: "Pets & Animals",
     backgroundImage: "url('../pictures/Pets_Animals.jpg')",
-  }
-  
+  },
 ];
 
 const Home = () => {
@@ -111,18 +90,17 @@ const Home = () => {
     <div>
       <NavBar />
       <h1>Categories</h1>
-      <div className="category-grid">
+      <div className={styles["category-grid"]}>
         {categories.map((category, index) => (
           <Link key={index} to={`/podcast/categories/${category.name}`}>
             <div
-              className="category-square"
+              className={styles["category-square"]}
               style={{
-                // backgroundColor: "black",
                 backgroundImage: category.backgroundImage,
               }}
             >
-              <div className="category-content">
-                <h2 className="category-name">{category.name}</h2>
+              <div className={styles["category-content"]}>
+                <h2 className={styles["category-name"]}>{category.name}</h2>
               </div>
             </div>
           </Link>

@@ -1,4 +1,3 @@
-/* Profile Creator Page */
 .profile-creator-container {
     max-width: 800px;
     margin: 0 auto;
@@ -15,7 +14,6 @@
     color: #333;
   }
   
-  /* Personal Details */
   .profile-details {
     display: flex;
     align-items: center;
@@ -44,12 +42,10 @@
     margin-bottom: 10px;
   }
   
-  /* Podcast Details */
   .profile-podcast p {
     margin-bottom: 10px;
   }
   
-  /* Social Media Links */
   .profile-social-links a {
     margin-right: 10px;
     font-size: 24px;
@@ -61,16 +57,11 @@
     color: #f7931e;
   }
   
-  /* Bio */
   .profile-bio {
     margin-bottom: 20px;
   }
   
-  /* Podcast Analytics */
-  /* .profile-analytics {
-  } */
   
-  /* Quick Actions */
   .profile-actions {
     display: flex;
   }
@@ -95,7 +86,6 @@
     background-color: #e8780d;
   }
   
-  /* Responsive Design */
   @media screen and (max-width: 400px) {
     .profile-creator-container {
       padding: 10px;

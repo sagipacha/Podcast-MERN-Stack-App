@@ -1,4 +1,5 @@
-import React from "react";
+import PropTypes from 'prop-types';
+import styles from './CreateEpisodeForm.module.css'
 
 const CreateEpisodeForm = ({
   podcasts,
@@ -7,8 +8,6 @@ const CreateEpisodeForm = ({
   handleSubmit,
   handleAudioUpload,
 }) => {
-  // console.log(podcasts);
-
   const groupedPodcasts = podcasts.reduce((groups, podcast) => {
     const category = podcast.category;
     if (!groups[category]) {
@@ -19,9 +18,9 @@ const CreateEpisodeForm = ({
   }, {});
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
+    <form onSubmit={handleSubmit} className={styles['form-container']}>
       <h2>Create a New Episode</h2>
-      <div className="form-group">
+      <div className={styles['form-group']}>
         <label>Title:</label>
         <input
           type="text"
@@ -29,30 +28,30 @@ const CreateEpisodeForm = ({
           value={formData.title}
           onChange={handleChange}
           placeholder="Title"
-          className="form-control"
+          className={styles['form-control']}
         />
       </div>
-      <div className="form-group">
+      <div className={styles['form-group']}>
         <label>Description:</label>
         <textarea
           name="description"
           value={formData.description}
           onChange={handleChange}
           placeholder="Description"
-          className="form-control"
+          className={styles['form-control']}
         ></textarea>
       </div>
-      <div className="form-group">
+      <div className={styles['form-group']}>
         <label>Release Date:</label>
         <input
           type="date"
           name="releaseDate"
           value={formData.releaseDate}
           onChange={handleChange}
-          className="form-control"
+          className={styles['form-control']}
         />
       </div>
-      <div className="form-group">
+      <div className={styles['form-group']}>
         <label>Cover Image URL:</label>
         <input
           type="text"
@@ -60,60 +59,26 @@ const CreateEpisodeForm = ({
           value={formData.coverImage}
           onChange={handleChange}
           placeholder="Cover Image URL"
-          className="form-control"
+          className={styles['form-control']}
         />
       </div>
-      <div className="form-group">
+      <div className={styles['form-group']}>
         <label>Upload Audio File:</label>
         <input
           type="file"
           accept="audio/*"
           onChange={(e) => handleAudioUpload(e.target.files[0])}
-          className="form-control"
+          className={styles['form-control']}
         />
       </div>
 
-      {/* <div className="form-group">
-    <label>Select Podcast:</label>
-    <table className="podcast-table">
-      <thead>
-        <tr>
-          {Object.keys(groupedPodcasts).map((category) => (
-            <th key={category}>{category}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          {Object.values(groupedPodcasts).map((podcastsInCategory, index) => (
-            <td key={index}>
-              <select
-                name="podcastId"
-                value={formData.podcastId}
-                onChange={handleChange}
-                className="form-control"
-              >
-                <option value="">Select a Podcast</option>
-                {podcastsInCategory.map((podcast) => (
-                  <option key={podcast.id} value={podcast.id}>
-                    {podcast.title}
-                  </option>
-                ))}
-              </select>
-            </td>
-          ))}
-        </tr>
-      </tbody>
-    </table>
-  </div> */}
-
-      <div className="form-group">
+      <div className={styles['form-group']}>
         <label>Select Podcast:</label>
         <select
           name="podcastId"
           value={formData.podcastId}
           onChange={handleChange}
-          className="form-control"
+          className={styles['form-control']}
         >
           <option value="">Select a Podcast</option>
           {Object.keys(groupedPodcasts).map((category) => (
@@ -128,11 +93,32 @@ const CreateEpisodeForm = ({
         </select>
       </div>
 
-      <button type="submit" className="btn-primary">
+      <button type="submit" className={styles['btn-primary']}>
         Create Episode
       </button>
     </form>
   );
+};
+
+CreateEpisodeForm.propTypes = {
+  podcasts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      _id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  formData: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    releaseDate: PropTypes.string.isRequired,
+    coverImage: PropTypes.string.isRequired,
+    podcastId: PropTypes.string.isRequired,
+  }).isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleAudioUpload: PropTypes.func.isRequired,
 };
 
 export default CreateEpisodeForm;

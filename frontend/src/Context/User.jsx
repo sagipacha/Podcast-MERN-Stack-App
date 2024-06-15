@@ -1,20 +1,20 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import axios from "axios";
 
 export const UserContext = createContext({});
 
 const API_BASE_URL = "https://podcast-mern-stack-app-3.onrender.com/api/v1";
-const API_VERIFY_URL = `${API_BASE_URL}/users/verification`; // Update API_VERIFY_URL
+const API_VERIFY_URL = `${API_BASE_URL}/users/verification`;
 
 export default function UserProvider({ children }) {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem("token"));
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const getUser = async () => {
     const userToken = localStorage.getItem("token");
     try {
-      const res = await axios.get(`${API_BASE_URL}/users/getOnlineUser`, { // Update the URL
+      const res = await axios.get(`${API_BASE_URL}/users/getOnlineUser`, {
         headers: {
           authorization: `Bearer ${userToken}`,
         },
@@ -29,11 +29,9 @@ export default function UserProvider({ children }) {
     try {
       const res = await axios.post(API_VERIFY_URL, { token });
       setUser(res.data.user);
-      setIsLoggedIn(true);
     } catch (error) {
       console.error("Error verifying token:", error);
       setUser(null);
-      setIsLoggedIn(false);
     }
   };
 
@@ -45,7 +43,6 @@ export default function UserProvider({ children }) {
   const signOut = () => {
     localStorage.removeItem("token");
     setUser(null);
-    setIsLoggedIn(false);
     setToken(null);
   };
 
@@ -84,3 +81,6 @@ export default function UserProvider({ children }) {
   return <UserContext.Provider value={shared}>{children}</UserContext.Provider>;
 }
 
+UserProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

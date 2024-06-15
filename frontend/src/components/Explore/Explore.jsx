@@ -1,22 +1,20 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
-import "./Explore.css";
+import styles from './Explore.module.css'; 
 
 const Explore = () => {
   return (
-    <div className="container">
-      <div className="center">
+    <div className={styles['container']}>
+      <div className={styles['center']}>
         <img
-        //   src={headphonesImage} 
           alt="Sleek Modern"
-          className="image"
+          className={styles['image']}
         />
         <h2>
           Welcome to <br />
           AudioSphere
         </h2>
-        <Link to="/Authentication">
-          <button className="explore-button">Explore</button>
+        <Link to="/authentication">
+          <button className={styles['explore-button']}>Explore</button>
         </Link>
       </div>
     </div>

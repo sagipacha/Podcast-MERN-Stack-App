@@ -56,28 +56,25 @@
   .icon-wrapper {
     display: flex;   
     flex-direction: column;
-    bottom: 150px; /* Adjust as needed */
+    bottom: 150px; 
     right: 100%;
     width: 100%;
     text-align: center;
     font-size: 15px;
   }
 
-  
   .logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ffffff; 
     padding: 5%;
-   
   }
   
   .logo {
     width: 150px; 
     height: 25%; 
   }
-
 
   @media screen and (min-width: 400px) {
     .navbar-icon {

@@ -25,7 +25,6 @@
 .cover-image {
   width: 150px; 
   height: 150px; 
-  /* object-fit: cover; */
   gap: 50%;
   border-radius: 15px;
 }
@@ -49,7 +48,6 @@
 .description {
   font-size: 0.9rem; 
   margin-left: 30px;
-  /* margin-bottom: 70px; */
 }
 
 .author,
@@ -57,7 +55,6 @@
 .date {
   font-size: 0.9rem; 
   margin-left: 30px;
-
 }
 
 .details {
@@ -84,13 +81,11 @@
   border-radius: 5px;
   cursor: pointer;
   margin-left: 30px;
-
 }
 
 .save-to-fav-button {
   background-color: #3498db; 
-  margin-left: 8px;
-
+  margin-left: 8px
 }
 
 .learn-more-button,
@@ -110,8 +105,6 @@
   background-color: #3498db; 
 }
 
-
-
 @media screen and (max-width: 400px) {
   .podcast-container {
     padding: 0 10px;
@@ -120,20 +113,20 @@
   .podcast-card {
     flex-direction: column;
     width: 100%;
-    height: auto; /* Adjust height to fit content */
+    height: auto; 
   }
 
   .cover-image {
-    width: 250px; /* Adjust width to fit container */
-    height: 160px; /* Adjust height as needed */
-    border-radius: 10px; /* Apply border radius */
-    margin-bottom: 10px; /* Add margin for spacing */
+    width: 250px; 
+    height: 160px; 
+    border-radius: 10px;
+    margin-bottom: 10px;
     justify-content: center;
   }
 
   .buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    margin-bottom: 10px; /* Add margin for spacing */
+    flex-direction: column; 
+    margin-bottom: 10px; 
     margin-left: 30px;
   }
 
@@ -142,13 +135,13 @@
   }
 
   .title {
-    text-align: center; /* Center-align title */
-    margin-bottom: 20px; /* Add margin for spacing */
+    text-align: center; 
+    margin-bottom: 20px; 
     margin-right: 10%;
   }
 
   .description {
-    margin-bottom: 10px; /* Add margin for spacing */
+    margin-bottom: 10px; 
     text-align: center;
     margin-right: 10%;
 
@@ -156,14 +149,14 @@
 
   .author,
   .category {
-    text-align: center; /* Center-align author and category */
-    margin-bottom: 10px; /* Add margin for spacing */
+    text-align: center; 
+    margin-bottom: 10px; 
     margin-right: 10%;
 
   }
 
   .learn-more-button {
-    margin-top: -10px; /* Adjust margin for spacing */
+    margin-top: -10px;
     margin-left: 50px;
   }
 }
