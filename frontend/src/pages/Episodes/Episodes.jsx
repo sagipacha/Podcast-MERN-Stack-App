@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { baseUrl } from "../../utils/baseUrl";
-import RenderEpisode from "../components/RenderEpisode/RenderEpisode";
-import Navbar from "../components/NavBar/NavBar";
+import { baseUrl } from "../../../utils/baseUrl";
+import RenderEpisode from "../../components/RenderEpisode/RenderEpisode";
+import Navbar from "../../components/NavBar/NavBar";
 
 const Episodes = () => {
   const [episodes, setEpisodes] = useState([]);

@@ -105,8 +105,8 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import CreateEpisodeForm from "../components/EpisodeForm/CreateEpisodeForm";
-import { baseUrl } from "../../utils/baseUrl";
+import CreateEpisodeForm from "../../components/EpisodeForm/CreateEpisodeForm";
+import { baseUrl } from "../../../utils/baseUrl";
 
 
 const CreateEpisode = () => {
