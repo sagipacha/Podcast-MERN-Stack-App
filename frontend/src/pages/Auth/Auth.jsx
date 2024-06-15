@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import Axios from "axios";
-import SignUp from "../components/AuthenticationCo/SignUp/SignUp";
-import { UserContext } from "../Context/User";
+import SignUp from "../../components/AuthenticationCo/SignUp/SignUp";
+import { UserContext } from "../../Context/User";
 import { useNavigate } from "react-router-dom";
-import LogIn from "../components/AuthenticationCo/LogIn/LogIn";
+import LogIn from "../../components/AuthenticationCo/LogIn/LogIn";
 import "../css/Authentication.css";
 
 export default function Authentication() {

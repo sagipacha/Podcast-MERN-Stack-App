@@ -1,5 +1,5 @@
 import React from 'react';
-import Explore from '../components/Explore/Explore';
+import Explore from '../../components/Explore/Explore';
 
 function Welcome(){
     return (

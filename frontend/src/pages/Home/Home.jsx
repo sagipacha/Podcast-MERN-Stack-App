@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Routes, Route } from "react-router-dom";
-import NavBar from "../components/NavBar/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
 import "../css/home.css";
 // import Footer from "../components/Footer/footer";
 // import AttachedPhotos from "../components/AttachedPhotos/AttachedPhotos";

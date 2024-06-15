@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import CreatePodcastForm from "../components/PodcastForm/CreatePodcastForm";
-import { baseUrl } from "../../utils/baseUrl";
+import CreatePodcastForm from "../../components/PodcastForm/CreatePodcastForm";
+import { baseUrl } from "../../../utils/baseUrl";
 
 export default function CreatePodcast() {
   const [formData, setFormData] = useState({

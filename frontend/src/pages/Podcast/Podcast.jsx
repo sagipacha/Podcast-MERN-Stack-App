@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import RenderPodcast from "../components/RenderPodcast/RenderPodcast";
-import { baseUrl } from "../../utils/baseUrl";
+import RenderPodcast from "../../components/RenderPodcast/RenderPodcast";
+import { baseUrl } from "../../../utils/baseUrl";
 import { useParams } from "react-router-dom";
-import NavBar from "../components/NavBar/NavBar";
+import NavBar from "../../components/NavBar/NavBar";
 
 const Podcast = () => {
   const [podcasts, setPodcasts] = useState([]);
