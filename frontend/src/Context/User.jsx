@@ -3,8 +3,8 @@ import axios from "axios";
 
 export const UserContext = createContext({});
 
-const API_BASE_URL = "http://localhost:1754/api/v1/users";
-const API_VERIFY_URL = `${API_BASE_URL}/verification`;
+const API_BASE_URL = "https://podcast-mern-stack-app-3.onrender.com/api/v1";
+const API_VERIFY_URL = `${API_BASE_URL}/users/verification`; // Update API_VERIFY_URL
 
 export default function UserProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -12,10 +12,9 @@ export default function UserProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const getUser = async () => {
-    const userToken = localStorage.getItem("token")
-    // console.log(userToken);
+    const userToken = localStorage.getItem("token");
     try {
-      const res = await axios.get(`${API_BASE_URL}/getOnlineUser`, {
+      const res = await axios.get(`${API_BASE_URL}/users/getOnlineUser`, { // Update the URL
         headers: {
           authorization: `Bearer ${userToken}`,
         },
@@ -60,7 +59,28 @@ export default function UserProvider({ children }) {
     getUser();
   }, []);
 
-  const shared = { user, setUser, logUser, stayConnected, signOut };
+  const forgotPasswordHandler = async (email) => {
+    try {
+      const res = await axios.post(`${API_BASE_URL}/users/forgotPassword`, {
+        email,
+      });
+      console.log(res);
+      return true;
+    } catch (error) {
+      console.log(`error: ${error}`);
+      return false;
+    }
+  };
+
+  const shared = {
+    user,
+    setUser,
+    logUser,
+    stayConnected,
+    signOut,
+    forgotPasswordHandler,
+  };
 
   return <UserContext.Provider value={shared}>{children}</UserContext.Provider>;
 }
+

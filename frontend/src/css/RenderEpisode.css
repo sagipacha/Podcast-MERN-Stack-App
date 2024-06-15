@@ -1,62 +1,69 @@
 .episode-card {
   display: flex;
   margin-bottom: 35px; 
-  margin-left: 35px;
+  margin-left: 5px;
   background-color: #f5f5f5;
   border-radius: 15px;
   overflow:hidden;
   box-shadow: 5px 2px 4px rgba(0, 0, 0, 0.1);
-  width: 630px; 
-  height: 180px; 
-  margin-top: 7%;
-  padding: 5px;
+  width: 900px; 
+  height: 150px; 
+  margin-top: 60px;
+  flex-wrap: nowrap
 }
 
-.episode-card image {
-  width: auto; 
+.episode-cover-image {
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  border-radius: 8px 8px 0 0; 
+  border-radius: 15px;
 }
 
-.EpiTitle {
-  margin-bottom: 15%;
-}
 
-.episode-details {
+/* .EpiTitle {
+  margin-bottom: 90px;
+  margin-left: 20px;
+} */
+
+/* .episode-details {
   padding: 16px;
-}
+} */
 
 .episode-details h3 {
   font-size: 18px;
   margin-bottom: 8px;
+  margin-left: 20px;
+
 }
 
 .episode-details p {
   margin-bottom: 4px;
   font-size: 14px;
-}
+  margin-left: 20px;
 
-.episode-info {
-  margin-bottom: 10px;
 }
 
 .episode-controls {
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 200px;
+  width: 500px;
+  height: 10px;
+  align-items:center;
+  margin-left: 60px;
 }
 
 .episode-controls audio {
   margin-right: 5px;
   width: 100%;
-  border: 1px solid #000000;
+  /* border: 1px solid #000000; */
   border-radius: 8px;
-  outline: none;
+  /* outline: none; */
 }
 
 .play-button {
   padding: 10px 20px;
-  font-size: 16px;
+  /* font-size: 16px; */
   color: #fff;
   background-color: #1db954;
   border: none;
@@ -83,13 +90,9 @@
     display: flex;
     flex-direction: row;
     width: auto;
-    height: auto;
-    padding: 20px;
+    width: 95%;
   }
   
-  h2{
-    text-align: center;
-  }
 
   .episode-card img {
     width: 40%; /* Adjusted width to fit container */
@@ -105,8 +108,9 @@
   }
 
   .episode-details h3 {
-    font-size: 14px; /* Reduced font size for better readability on smaller screens */
-    margin-bottom: 10%;
+    /* margin-bottom: 10%; */
+    margin-right: 40%;
+    justify-content: left;
   }
 
   .episode-details p {

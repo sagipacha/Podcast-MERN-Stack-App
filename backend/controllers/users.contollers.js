@@ -44,7 +44,7 @@ const sendVerificationEmail = async (email, token) => {
       },
     });
 
-    const verificationLink = `http://localhost:1754/verify/${email}/${token}`;
+    const verificationLink = `https://podcast-mern-stack-app-3.onrender.com/verify/${email}/${token}`;
 
     const mailOptions = {
       from: process.env.EMAIL_USERNAME,
@@ -120,87 +120,87 @@ const login = async (req, res) => {
 };
 
 // Forgot Password
-const forgotPassword = async (req, res) => {
-  const { email } = req.body;
-  try {
-    const oldUser = await User.findOne({ email });
-    if (!oldUser) {
-      return res.json({ status: "User Not Exists!!" });
-    }
-    const secret = process.env.JWT_SECRET + oldUser.password;
-    const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
-      expiresIn: "720h",
-    });
-    const resetLink = `http://localhost:1754/reset-password/${oldUser._id}/${token}`;
+// const forgotPassword = async (req, res) => {
+//   const { email } = req.body;
+//   try {
+//     const oldUser = await User.findOne({ email });
+//     if (!oldUser) {
+//       return res.json({ status: "User Not Exists!!" });
+//     }
+//     const secret = process.env.JWT_SECRET + oldUser.password;
+//     const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, secret, {
+//       expiresIn: "720h",
+//     });
+//     const resetLink = `https://podcast-mern-stack-app-3.onrender.com/reset-password/${oldUser._id}/${token}`;
 
-    var transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USERNAME,
-        pass: process.env.EMAIL_PASSWORD,
-      },
-    });
+//     var transporter = nodemailer.createTransport({
+//       service: "gmail",
+//       auth: {
+//         user: process.env.EMAIL_USERNAME,
+//         pass: process.env.EMAIL_PASSWORD,
+//       },
+//     });
 
-    var mailOptions = {
-      from: process.env.EMAIL_USERNAME,
-      to: email,
-      subject: "Password Reset",
-      text: resetLink,
-    };
+//     var mailOptions = {
+//       from: process.env.EMAIL_USERNAME,
+//       to: email,
+//       subject: "Password Reset",
+//       text: resetLink,
+//     };
 
-    transporter.sendMail(mailOptions, function (error, info) {
-      if (error) {
-        console.log(error);
-        return res.status(500).json({ status: "Error sending email" });
-      } else {
-        console.log("Email sent: " + info.response);
-        return res.status(200).json({ status: "Email sent successfully" });
-      }
-    });
+//     transporter.sendMail(mailOptions, function (error, info) {
+//       if (error) {
+//         console.log(error);
+//         return res.status(500).json({ status: "Error sending email" });
+//       } else {
+//         console.log("Email sent: " + info.response);
+//         return res.status(200).json({ status: "Email sent successfully" });
+//       }
+//     });
 
-    console.log(resetLink);
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ status: "Internal server error" });
-  }
-};
+//     console.log(resetLink);
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ status: "Internal server error" });
+//   }
+// };
 
 // Get Reset Password
-const getResetPassword = async (req, res) => {
-  const { id, token } = req.params;
-  try {
-    const oldUser = await User.findById(id);
-    if (!oldUser) {
-      return res.json({ status: "User Not Exists!!" });
-    }
-    const secret = process.env.JWT_SECRET + oldUser.password;
-    const verify = jwt.verify(token, secret);
-    res.render("index", { email: verify.email, status: "Not Verified" });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ status: "Internal server error" });
-  }
-};
+// const getResetPassword = async (req, res) => {
+//   const { id, token } = req.params;
+//   try {
+//     const oldUser = await User.findById(id);
+//     if (!oldUser) {
+//       return res.json({ status: "User Not Exists!!" });
+//     }
+//     const secret = process.env.JWT_SECRET + oldUser.password;
+//     const verify = jwt.verify(token, secret);
+//     res.render("index", { email: verify.email, status: "Not Verified" });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ status: "Internal server error" });
+//   }
+// };
 
 // Post Reset Password
-const postResetPassword = async (req, res) => {
-  const { id, token } = req.params;
-  const { password } = req.body;
-  try {
-    const oldUser = await User.findById(id);
-    if (!oldUser) {
-      return res.json({ status: "User Not Exists!!" });
-    }
-    const secret = process.env.JWT_SECRET + oldUser.password;
-    const verify = jwt.verify(token, secret);
-    const encryptedPassword = await bcrypt.hash(password, 10);
-    await User.findByIdAndUpdate(id, { password: encryptedPassword });
-    return res.render("index", { email: verify.email, status: "verified" });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ status: "Internal server error" });
-  }
-};
+// const postResetPassword = async (req, res) => {
+//   const { id, token } = req.params;
+//   const { password } = req.body;
+//   try {
+//     const oldUser = await User.findById(id);
+//     if (!oldUser) {
+//       return res.json({ status: "User Not Exists!!" });
+//     }
+//     const secret = process.env.JWT_SECRET + oldUser.password;
+//     const verify = jwt.verify(token, secret);
+//     const encryptedPassword = await bcrypt.hash(password, 10);
+//     await User.findByIdAndUpdate(id, { password: encryptedPassword });
+//     return res.render("index", { email: verify.email, status: "verified" });
+//   } catch (error) {
+//     console.error(error);
+//     return res.status(500).json({ status: "Internal server error" });
+//   }
+// };
 
 // Get Users
 const getUsers = async (req, res) => {
@@ -252,20 +252,78 @@ const getOnlineUser = async (req, res) => {
 };
 
 
+//^ user Forgot Password
+const userForgotPassword = async (req, res) => {
+  const { email } = req.body;
+  console.log(1);
+  try {
+  const user = await User.findOne({ email });
+  console.log(user);
+  if (!user) return res.status(400).send("user not found");
+  console.log(2);
+  const resetToken = generateResetPasswordToken({ user });
+  const link = `${baseUrl}/passwordReset/token/${resetToken}/id/${user._id}`;
+  await sendResetPasswordEmail(user.email, "Password Reset Request", {
+  name: user.fullName,
+  link: link,
+  });
+  console.log(3);
+  res.send("email sent");
+  } catch (error) {
+    console.log(4);
+  console.log(error);
+  res.status(400).send("ERROR");
+  }
+  };
+
+  //^ user reset password
+  const userResetPassword = async (req, res) => {
+  const { body } = req;
+  const reqUser = req.user;
+  try {
+  console.log(reqUser.user._id);
+  const user = await User.findById(reqUser.user._id);
+  const hash = await bcrypt.hash(body.newPassword, 10);
+  user.password = hash;
+  await user.save();
+  res.send("Password reset successfully");
+  } catch (error) {
+  console.log(error);
+  res.status(500).send("Error resetting password");
+  }
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 module.exports = {
   login,
   getToken,
-  forgotPassword,
-  getResetPassword,
   register,
   getUsers,
   updateUser,
   deleteUser,
-  postResetPassword,
   generateVerificationToken,
   sendVerificationEmail,
-  getOnlineUser
+  getOnlineUser,
+  userForgotPassword,
+  userResetPassword
 };

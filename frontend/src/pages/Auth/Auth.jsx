@@ -17,8 +17,8 @@ export default function Authentication() {
   });
   const navigate = useNavigate();
 
-  const urlLogIn = "http://localhost:1754/api/v1/users/login";
-  const urlRegister = "http://localhost:1754/api/v1/users/register";
+  const urlLogIn = "https://podcast-mern-stack-app-3.onrender.com/api/v1/users/login";
+  const urlRegister = "https://podcast-mern-stack-app-3.onrender.com/api/v1/users/register";
 
   const handleChange = (e) => {
     const newData = { ...userdata };

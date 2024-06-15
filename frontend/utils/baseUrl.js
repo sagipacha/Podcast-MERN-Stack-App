@@ -1,3 +1,5 @@
-const baseUrl = "http://localhost:1754/api/v1";
+const baseUrl = "https://podcast-mern-stack-app-3.onrender.com/api/v1";
+
+
 
 export { baseUrl };

@@ -3,8 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faKey } from "@fortawesome/free-solid-svg-icons";
 // import "../../../css/logIn.css";
 import "../../../css/SignUp.css";
+import { useNavigate } from "react-router-dom";
 
 export default function LogIn({ handleSubmit, handleChange }) {
+  const navigate = useNavigate();
+
+  const handleForgotPasswordClick = () => {
+    navigate("/authentication/forgotPassword");
+  };
+
   return (
     <div className="signup-container">
       <h1 className="title-signup">Log In</h1>
@@ -44,6 +51,8 @@ export default function LogIn({ handleSubmit, handleChange }) {
         <button type="submit" className="btn-submit">
           Submit
         </button>
+
+        <p onClick={handleForgotPasswordClick}>forgot password? Click here</p>
       </form>
     </div>
   );

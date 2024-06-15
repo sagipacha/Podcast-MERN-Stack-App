@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function search(){
+export default function searchcComponent(){
     return (
         <div>
         <h1>search</h1>
