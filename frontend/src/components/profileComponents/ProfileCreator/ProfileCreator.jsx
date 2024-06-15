@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../../Context/User";
 import { Link } from "react-router-dom";
-import "../../../css/ProfileCreator.css";
+import "./ProfileCreator.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,

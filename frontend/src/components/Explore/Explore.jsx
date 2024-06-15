@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../../css/Explore.css";
+import "./Explore.css";
 
 const Explore = () => {
   return (

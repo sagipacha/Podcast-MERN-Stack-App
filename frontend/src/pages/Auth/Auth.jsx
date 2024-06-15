@@ -4,7 +4,7 @@ import SignUp from "../../components/AuthenticationCo/SignUp/SignUp";
 import { UserContext } from "../../Context/User";
 import { useNavigate } from "react-router-dom";
 import LogIn from "../../components/AuthenticationCo/LogIn/LogIn";
-import "../css/Authentication.css";
+import "./Authentication.css";
 
 export default function Authentication() {
   const [logOrSign, setlogOrSign] = useState(false);

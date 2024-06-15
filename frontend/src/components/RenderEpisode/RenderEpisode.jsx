@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../css/RenderEpisode.css";
+import "./RenderEpisode.css";
 
 const RenderEpisode = ({ episode }) => {
   const navigate = useNavigate();
