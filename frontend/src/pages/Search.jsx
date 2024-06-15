@@ -1,18 +1,13 @@
-// import React, { useState } from 'react';
-// import Search from '../components/search/search';
+import React, { useState } from 'react';
+import searchcComponent from "../components/search/search"
 
-// const Search = ({ onSearch }) => {
-// // const [query, setQuery] = useState('');
 
-// // const handleSearch = () => {
-// //     onSearch(query);
-// // };
+export default function Search(){
+    return (
+    <div>
+        <searchcComponent />
+    </div>
+    )
+}
 
-// return (
-//     <div>
-//     <Search />
-//     </div>
-// );
-// };
 
-// export default Search;

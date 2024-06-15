@@ -6,9 +6,8 @@ const {
   getUsers,
   updateUser,
   deleteUser,
-  forgotPassword,
-  getResetPassword,
-  postResetPassword,
+  userForgotPassword,
+  userResetPassword,
   generateVerificationToken,
   sendVerificationEmail,
   getToken,
@@ -26,9 +25,16 @@ router.post("/generate-verification-token", generateVerificationToken);
 router.post("/send-verification-email", sendVerificationEmail);
 router.post("/register", register);
 router.post("/login", login);
-router.post("/forgot-password", forgotPassword);
-router.post("/reset-password/:id/:token", postResetPassword);
-router.get("/reset-password/:id/:token", getResetPassword);
+// router.post("/forgot-password", forgotPassword);
+// router.post("/reset-password/:id/:token", postResetPassword);
+// router.get("/reset-password/:id/:token", getResetPassword);
+
+//^ forgot password
+router.post("/forgotPassword",userForgotPassword);
+//^ reset password
+router.post("/resetPassword", auth, userResetPassword);
+
+
 
 router.get("/getOnlineUser", auth, getOnlineUser);
 
