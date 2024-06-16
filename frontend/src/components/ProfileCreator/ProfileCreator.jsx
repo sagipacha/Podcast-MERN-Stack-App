@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { UserContext } from "../../../Context/User";
+import { UserContext } from "../../Context/User";
 import { Link } from "react-router-dom";
 import styles from "./ProfileCreator.module.css";
 
