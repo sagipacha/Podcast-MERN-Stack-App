@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import ProfileGuest from "../../components/profileComponents/ProfileGuest/ProfileGuest";
-import ProfileCreator from "../../components/profileComponents/ProfileCreator/ProfileCreator";
+import ProfileGuest from "../../components/ProfileGuest/ProfileGuest";
+import ProfileCreator from "../../components/ProfileCreator/ProfileCreator";
 import NavBar from "../../components/NavBar/NavBar";
 import { UserContext } from "../../Context/User";
 
